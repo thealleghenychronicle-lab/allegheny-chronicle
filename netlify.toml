@@ -16,6 +16,11 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/images/*"
+  for = "/images/articles/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/images/logo*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
