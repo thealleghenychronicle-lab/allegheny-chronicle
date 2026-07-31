@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # <- set after you connect DecapBridge
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/YOUR-SITE-ID   # <- DecapBridge gives you this
+  gateway_url: https://gateway.decapbridge.com
+
+# Netlify Identity + Git Gateway are deprecated, so this config uses
+# DecapBridge (free, https://decapbridge.com) instead — it's a drop-in
+# replacement that handles GitHub login for the CMS without needing a
+# GitHub account for every editor. See README.md for the one-time setup.
+
+media_folder: "public/images/articles"
+public_folder: "/images/articles"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    label_singular: "Article"
+    folder: "content/articles"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{category}} ({{date}})"
+    sortable_fields: ["date", "title", "category"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Custom URL Slug (optional)"
+        name: "slug"
+        widget: "string"
+        required: false
+        hint: "Leave blank to auto-generate a keyword-rich URL from the business name + title + location."
+      - { label: "Business Name", name: "businessName", widget: "string", required: false }
+      - { label: "Location (neighborhood, city)", name: "location", widget: "string", required: false }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Featured Image Alt Text", name: "imageAlt", widget: "string", required: false }
+      - { label: "Author", name: "author", widget: "string", default: "The Allegheny Chronicle Staff" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt (shown on cards & search)", name: "excerpt", widget: "text" }
+      - { label: "Featured (homepage hero)", name: "featured", widget: "boolean", default: false }
+      - { label: "Trending", name: "trending", widget: "boolean", default: false }
+      - { label: "Editor's Pick", name: "editorsPick", widget: "boolean", default: false }
+      - { label: "Save as Draft (hides from site)", name: "draft", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }

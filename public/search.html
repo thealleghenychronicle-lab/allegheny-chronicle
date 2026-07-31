@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Search — The Allegheny Chronicle</title>
+<meta name="description" content="Search business stories, industries, and companies covered by The Allegheny Chronicle." />
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="/search.html" />
+<link rel="icon" href="/images/logo.png" />
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="sidebar__header">
+    <span class="sidebar__title">Menu</span>
+    <button class="sidebar__close" id="sidebarClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="sidebar__nav"><a href="/">Home</a></nav>
+  <div class="sidebar__divider"></div>
+  <p class="sidebar__eyebrow">Marketing Services</p>
+  <ul class="sidebar__services">
+    <li>SEO Optimization</li>
+    <li>Website Development</li>
+    <li>Social Media Management</li>
+    <li>Multi-Platform Advertising</li>
+    <li>Blog &amp; Article Writing</li>
+    <li>Google Business Profile Optimization</li>
+  </ul>
+  <div class="sidebar__divider"></div>
+  <div class="sidebar__quote">
+    <h3>Request a Free Quote</h3>
+    <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="quote" />
+      <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <label>Business Name<input type="text" name="business_name" required /></label>
+      <label>Email<input type="email" name="email" required /></label>
+      <label>Phone<input type="tel" name="phone" /></label>
+      <label>Message<textarea name="message" rows="4" placeholder="Describe the services you need&hellip;" required></textarea></label>
+      <button type="submit">Request Free Quote</button>
+    </form>
+    <p class="sidebar__note">We'll reply within one business day.</p>
+  </div>
+</aside>
+
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo" aria-label="The Allegheny Chronicle — Home">
+      <img src="/images/logo-transparent.png" alt="The Allegheny Chronicle" width="42" height="42" />
+      <span class="site-header__wordmark">The Allegheny Chronicle</span>
+    </a>
+    <form class="site-header__search" role="search" action="/search.html" method="get">
+      <label for="headerSearchInput" class="sr-only">Search businesses, articles, industries</label>
+      <input id="headerSearchInput" name="q" type="text" placeholder="Search businesses, articles, industries&hellip;" autocomplete="off" />
+      <button type="submit" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    </form>
+    <button class="site-header__menu" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="container search-hero">
+    <span class="eyebrow" id="searchMeta">Searching&hellip;</span>
+    <h1 id="searchHeading">Results</h1>
+  </div>
+  <div class="container" id="searchBody"></div>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="footerYear"></span> The Allegheny Chronicle</p>
+</footer>
+
+<script src="/js/main.js"></script>
+<script src="/js/search-engine.js"></script>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var q = (params.get("q") || "").trim();
+  document.getElementById("headerSearchInput").value = q;
+
+  var heading = document.getElementById("searchHeading");
+  var meta = document.getElementById("searchMeta");
+  var body = document.getElementById("searchBody");
+
+  function fmtDate(iso) {
+    return new Date(iso).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  }
+
+  function resultCard(a) {
+    return (
+      '<a class="search-result fade-up" href="/articles/' + a.slug + '/">' +
+        '<div class="search-result__img" style="background-image:url(\'' + a.image + '\')"></div>' +
+        '<div>' +
+          '<span class="search-result__cat">' + a.category + '</span>' +
+          '<h3>' + a.title + '</h3>' +
+          '<p>' + a.excerpt + '</p>' +
+          '<span class="article-card__meta">' + fmtDate(a.date) + ' &middot; ' + a.readingTime + ' min read</span>' +
+        '</div>' +
+      '</a>'
+    );
+  }
+
+  if (!q) {
+    heading.textContent = "What are you looking for?";
+    meta.textContent = "Search";
+    body.innerHTML =
+      '<div class="search-empty"><h2>Type a business, industry, or topic above.</h2>' +
+      '<a class="btn btn--gold" href="/">Back to Home</a></div>';
+    return;
+  }
+
+  heading.innerHTML = 'Results for &ldquo;<span class="search-hero__query">' + q + '</span>&rdquo;';
+
+  fetch("/articles.json")
+    .then(function (r) { return r.ok ? r.json() : []; })
+    .catch(function () { return []; })
+    .then(function (articles) {
+      var results = window.ChronicleSearch.search(articles || [], q);
+      if (!results.length) {
+        meta.textContent = "0 results";
+        body.innerHTML =
+          '<div class="search-empty"><h2>No articles matched your search.</h2>' +
+          '<a class="btn btn--gold" href="/">Back to Home</a></div>';
+        return;
+      }
+      meta.textContent = results.length + (results.length === 1 ? " result" : " results");
+      body.innerHTML = '<div class="search-results">' + results.map(resultCard).join("") + '</div>';
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{{META}}
+{{SCHEMA}}
+<link rel="icon" href="/images/logo.png" />
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="sidebar__header">
+    <span class="sidebar__title">Menu</span>
+    <button class="sidebar__close" id="sidebarClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="sidebar__nav"><a href="/">Home</a></nav>
+  <div class="sidebar__divider"></div>
+  <p class="sidebar__eyebrow">Marketing Services</p>
+  <ul class="sidebar__services">
+    <li>SEO Optimization</li>
+    <li>Website Development</li>
+    <li>Social Media Management</li>
+    <li>Multi-Platform Advertising</li>
+    <li>Blog &amp; Article Writing</li>
+    <li>Google Business Profile Optimization</li>
+  </ul>
+  <div class="sidebar__divider"></div>
+  <div class="sidebar__quote">
+    <h3>Request a Free Quote</h3>
+    <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="quote" />
+      <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <label>Business Name<input type="text" name="business_name" required /></label>
+      <label>Email<input type="email" name="email" required /></label>
+      <label>Phone<input type="tel" name="phone" /></label>
+      <label>Message<textarea name="message" rows="4" placeholder="Describe the services you need&hellip;" required></textarea></label>
+      <button type="submit">Request Free Quote</button>
+    </form>
+    <p class="sidebar__note">We'll reply within one business day.</p>
+  </div>
+</aside>
+
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo" aria-label="The Allegheny Chronicle — Home">
+      <img src="/images/logo-transparent.png" alt="The Allegheny Chronicle" width="42" height="42" />
+      <span class="site-header__wordmark">The Allegheny Chronicle</span>
+    </a>
+    <form class="site-header__search" role="search" action="/search.html" method="get">
+      <label for="headerSearchInput" class="sr-only">Search businesses, articles, industries</label>
+      <input id="headerSearchInput" name="q" type="text" placeholder="Search businesses, articles, industries&hellip;" autocomplete="off" />
+      <button type="submit" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    </form>
+    <button class="site-header__menu" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="container article-hero">
+    <div class="article-hero__img" style="background-image:url('{{IMAGE}}')" role="img" aria-label="{{IMAGE_ALT}}"></div>
+  </div>
+
+  <div class="container article-head">
+    <span class="eyebrow">{{CATEGORY}}</span>
+    <h1>{{TITLE}}</h1>
+    <div class="article-head__meta">
+      <span>By {{AUTHOR}}</span>
+      <span class="dot">&middot;</span>
+      <time datetime="{{DATE_ISO}}">{{DATE}}</time>
+      <span class="dot">&middot;</span>
+      <span>{{READING_TIME}} min read</span>
+    </div>
+  </div>
+
+  <div class="article-layout">
+    <div class="article-layout__toc">
+      {{TOC}}
+    </div>
+
+    <div class="article-layout__main">
+      <a class="back-home" href="/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+      <div class="article-body">
+        {{BODY}}
+      </div>
+
+      <section class="{{RELATED_CLASS}}">
+        <div class="section__head">
+          <h2><svg class="river-line" viewBox="0 0 84 14" aria-hidden="true"><path d="M0 7 C 20 2, 30 12, 42 7 S 64 2, 84 7"/></svg>Related Stories</h2>
+        </div>
+        <div class="card-grid card-grid--3">
+          {{RELATED}}
+        </div>
+      </section>
+    </div>
+
+    <div class="article-layout__share">
+      <div class="share">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{URL}}" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12"/></svg>
+        </a>
+        <a href="https://twitter.com/intent/tweet?url={{URL}}&text={{SHARE_JSON}}" target="_blank" rel="noopener" aria-label="Share on X">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.6L4.6 22H1.4l8.1-9.3L1 2h7l4.9 6.1L18.9 2Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{URL}}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5ZM.2 8.75h4.6V23H.2V8.75ZM8.4 8.75h4.4v1.95h.06c.6-1.15 2.1-2.35 4.3-2.35 4.6 0 5.45 3 5.45 7v8.65h-4.6v-7.67c0-1.83-.03-4.2-2.56-4.2-2.56 0-2.95 2-2.95 4.06V23H8.4V8.75Z"/></svg>
+        </a>
+        <button type="button" id="copyLinkBtn" aria-label="Copy link">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.2 1.2M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.2-1.2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="footerYear"></span> The Allegheny Chronicle</p>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+  var copyBtn = document.getElementById("copyLinkBtn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", function () {
+      navigator.clipboard.writeText(window.location.href).then(function () {
+        copyBtn.setAttribute("aria-label", "Link copied");
+      });
+    });
+  }
+</script>
+</body>
+</html>

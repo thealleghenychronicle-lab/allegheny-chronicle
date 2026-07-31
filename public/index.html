@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Allegheny Chronicle — Business Stories from Allegheny County</title>
+<meta name="description" content="The Allegheny Chronicle covers trusted business stories from across Allegheny County and the Pittsburgh region." />
+<link rel="canonical" href="/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The Allegheny Chronicle" />
+<meta property="og:description" content="Trusted business stories from across Allegheny County and the Pittsburgh region." />
+<meta property="og:image" content="/images/logo.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/images/logo.png" />
+<link rel="stylesheet" href="/css/styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"The Allegheny Chronicle","url":"/","logo":"/images/logo.png"}
+</script>
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="sidebar__header">
+    <span class="sidebar__title">Menu</span>
+    <button class="sidebar__close" id="sidebarClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="sidebar__nav"><a href="/">Home</a></nav>
+  <div class="sidebar__divider"></div>
+  <p class="sidebar__eyebrow">Marketing Services</p>
+  <ul class="sidebar__services">
+    <li>SEO Optimization</li>
+    <li>Website Development</li>
+    <li>Social Media Management</li>
+    <li>Multi-Platform Advertising</li>
+    <li>Blog &amp; Article Writing</li>
+    <li>Google Business Profile Optimization</li>
+  </ul>
+  <div class="sidebar__divider"></div>
+  <div class="sidebar__quote">
+    <h3>Request a Free Quote</h3>
+    <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="quote" />
+      <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <label>Business Name<input type="text" name="business_name" required /></label>
+      <label>Email<input type="email" name="email" required /></label>
+      <label>Phone<input type="tel" name="phone" /></label>
+      <label>Message<textarea name="message" rows="4" placeholder="Describe the services you need&hellip;" required></textarea></label>
+      <button type="submit">Request Free Quote</button>
+    </form>
+    <p class="sidebar__note">We'll reply within one business day.</p>
+  </div>
+</aside>
+
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo" aria-label="The Allegheny Chronicle — Home">
+      <img src="/images/logo-transparent.png" alt="The Allegheny Chronicle" width="42" height="42" />
+      <span class="site-header__wordmark">The Allegheny Chronicle</span>
+    </a>
+    <form class="site-header__search" role="search" action="/search.html" method="get">
+      <label for="headerSearchInput" class="sr-only">Search businesses, articles, industries</label>
+      <input id="headerSearchInput" name="q" type="text" placeholder="Search businesses, articles, industries&hellip;" autocomplete="off" />
+      <button type="submit" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    </form>
+    <button class="site-header__menu" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="homeMain">
+  <!-- Rendered by js/home.js based on how many published articles exist. -->
+  <div class="empty-state" id="loadingState">
+    <div class="empty-state__inner">
+      <div class="skeleton" style="height:220px;width:220px;border-radius:50%;margin:0 auto 24px;"></div>
+      <div class="skeleton" style="height:28px;width:70%;margin:0 auto 14px;"></div>
+      <div class="skeleton" style="height:16px;width:50%;margin:0 auto;"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="footerYear"></span> The Allegheny Chronicle</p>
+</footer>
+
+<script src="/js/main.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>
