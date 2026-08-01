@@ -389,7 +389,8 @@ body.sidebar-open { overflow: hidden; }
 .related-empty--left .related-empty__eyebrow,
 .related-empty--left .river-line { margin-left: 0; }
 
-.services-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 0 0 60px; }
+.services-nav { text-align: center; padding: 0 0 60px; }
+.services-nav .btn { display: inline-block; margin: 0 6px 12px; }
 
 .service-section .article-body { max-width: 700px; margin: 0 auto; }
 .service-section .related-empty { max-width: 700px; margin: 30px auto 0; }
@@ -399,7 +400,9 @@ body.sidebar-open { overflow: hidden; }
 
 .quote-panel {
   background: var(--black); color: var(--paper); border-radius: 22px;
+  border: 1px solid var(--gold-deep);
   max-width: 640px; margin: 0 auto; padding: 48px clamp(24px, 6vw, 48px);
+  box-shadow: var(--shadow);
 }
 .quote-panel .sidebar__quote { padding: 0; }
 .quote-panel .sidebar__quote h3 { margin-top: 0; }
