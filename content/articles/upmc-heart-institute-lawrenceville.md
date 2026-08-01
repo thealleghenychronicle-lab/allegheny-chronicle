@@ -1,15 +1,21 @@
 ---
-title: "Inside UPMC's $85 Million Bet on Pittsburgh's Pediatric Heart Care"
+title: Inside UPMC's $85 Million Bet on Pittsburgh's Pediatric Heart Care
 slug: ""
-businessName: "UPMC Children's Hospital of Pittsburgh"
-location: "Lawrenceville, Pittsburgh"
-category: "Healthcare"
-tags: ["UPMC", "healthcare", "Lawrenceville", "hospitals"]
-image: "/images/placeholder-hero.jpg"
-imageAlt: "UPMC Children's Hospital of Pittsburgh exterior"
-author: "The Allegheny Chronicle Staff"
+businessName: UPMC Children's Hospital of Pittsburgh
+location: Lawrenceville, Pittsburgh
+category: Healthcare
+tags:
+  - UPMC
+  - healthcare
+  - Lawrenceville
+  - hospitals
+image: /images/articles/upmc-stock-photo.jpg
+imageAlt: UPMC Children's Hospital of Pittsburgh exterior
+author: The Allegheny Chronicle Staff
 date: 2026-07-15
-excerpt: "UPMC is expanding its Children's Hospital heart program in Lawrenceville with an $85 million investment, even as the health system cuts costs elsewhere."
+excerpt: UPMC is expanding its Children's Hospital heart program in
+  Lawrenceville with an $85 million investment, even as the health system cuts
+  costs elsewhere.
 featured: false
 trending: false
 editorsPick: false
