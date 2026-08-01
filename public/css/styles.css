@@ -380,6 +380,77 @@ body.sidebar-open { overflow: hidden; }
 .related-empty__title { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; margin: 0 0 14px; }
 .related-empty__body { color: #61616a; font-size: 0.98rem; margin: 0 0 26px; }
 
+.no-results-cta {
+  max-width: 560px; margin: 40px auto 0; text-align: center; padding: 40px 32px;
+  background: linear-gradient(180deg, var(--paper-dim), var(--paper));
+  border: 1px solid var(--line); border-radius: 20px;
+}
+.no-results-cta .river-line { margin: 0 auto 16px; }
+.no-results-cta p { margin: 0; font-size: 1rem; color: #3a3a3f; line-height: 1.6; }
+.no-results-cta a { color: var(--gold-deep); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ============================== SERVICES PAGE ============================== */
+.services-hero { padding: 64px 0 40px; text-align: center; }
+.services-hero .river-line { margin: 0 auto 18px; }
+.services-hero h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.1rem, 4.6vw, 3.2rem); margin: 0 0 18px; }
+.services-hero p { max-width: 620px; margin: 0 auto; color: #5b5b60; font-size: 1.08rem; }
+
+.services-nav {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  padding: 0 0 60px; max-width: 900px; margin: 0 auto;
+}
+.services-nav a {
+  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); color: var(--black);
+  transition: all .2s ease;
+}
+.services-nav a:hover { background: var(--black); border-color: var(--black); color: var(--white); }
+
+.service-block {
+  max-width: 780px; margin: 0 auto; padding: 60px clamp(20px, 5vw, 0px);
+  border-top: 1px solid var(--line); scroll-margin-top: calc(var(--header-h) + 20px);
+}
+.service-block:first-of-type { border-top: none; }
+.service-block__num { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; color: var(--gold-deep); }
+.service-block h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 10px 0 20px; }
+.service-block h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; margin: 30px 0 12px; }
+.service-block p { font-size: 1.05rem; line-height: 1.8; color: #2b2b2f; margin: 0 0 18px; }
+.service-block ul { padding-left: 22px; margin: 0 0 18px; color: #2b2b2f; font-size: 1.02rem; line-height: 1.8; }
+
+.services-inquiry {
+  max-width: 640px; margin: 20px auto 90px; padding: 48px clamp(24px, 6vw, 48px);
+  background: var(--black); border-radius: 22px; color: var(--paper);
+}
+.services-inquiry h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.7rem; margin: 0 0 8px; color: var(--white); }
+.services-inquiry p { color: rgba(250,248,244,0.75); margin: 0 0 26px; }
+.services-inquiry form { display: flex; flex-direction: column; gap: 16px; }
+.services-inquiry label {
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(250,248,244,0.6); display: flex; flex-direction: column; gap: 7px;
+}
+.services-inquiry input, .services-inquiry textarea {
+  font-family: var(--font-body); font-size: 1rem; color: var(--white);
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 10px; padding: 13px 15px; resize: vertical;
+}
+.services-inquiry input:focus, .services-inquiry textarea:focus { border-color: var(--gold); outline: none; background: rgba(255,255,255,0.09); }
+.services-inquiry button[type="submit"] {
+  margin-top: 6px; background: var(--gold); color: var(--black); border: none;
+  border-radius: 999px; padding: 15px 26px; font-weight: 600; font-size: 1rem;
+  transition: background .2s ease, transform .15s ease;
+}
+.services-inquiry button[type="submit"]:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* ============================== THANK YOU PAGE ============================== */
+.thankyou-hero {
+  min-height: calc(100vh - var(--header-h) - 140px); display: flex; align-items: center;
+  justify-content: center; text-align: center; padding: 60px 20px;
+}
+.thankyou-hero__inner { max-width: 560px; }
+.thankyou-hero .river-line { margin: 0 auto 18px; }
+.thankyou-hero h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 4.6vw, 2.8rem); margin: 0 0 18px; }
+.thankyou-hero p { color: #5b5b60; font-size: 1.06rem; margin: 0 0 30px; }
+
 /* ============================== UTILITY / SKELETONS ============================== */
 .skeleton { background: linear-gradient(90deg, var(--paper-dim) 25%, #eae6db 37%, var(--paper-dim) 63%); background-size: 400% 100%; animation: shimmer 1.4s ease infinite; border-radius: 10px; }
 @keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: 0 0; } }

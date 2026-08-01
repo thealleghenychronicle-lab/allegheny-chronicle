@@ -3,19 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Allegheny Chronicle — Business Stories from Allegheny County</title>
-<meta name="description" content="The Allegheny Chronicle covers trusted business stories from across Allegheny County and the Pittsburgh region." />
-<link rel="canonical" href="/" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="The Allegheny Chronicle" />
-<meta property="og:description" content="Trusted business stories from across Allegheny County and the Pittsburgh region." />
-<meta property="og:image" content="/images/logo.png" />
-<meta name="twitter:card" content="summary_large_image" />
+<title>Thank You — The Allegheny Chronicle</title>
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="/thank-you" />
 <link rel="icon" href="/images/logo.png" />
 <link rel="stylesheet" href="/css/styles.css" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"The Allegheny Chronicle","url":"/","logo":"/images/logo.png"}
-</script>
 </head>
 <body>
 
@@ -36,23 +28,6 @@
     <li><a href="/services#blog-article-writing">Blog &amp; Article Writing</a></li>
     <li><a href="/services#google-business-profile-optimization">Google Business Profile Optimization</a></li>
   </ul>
-  <div class="sidebar__divider"></div>
-  <div class="sidebar__quote">
-    <h3>Request a Free Quote</h3>
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="6834e651-4651-4952-b973-614af0dc6437" />
-      <input type="hidden" name="subject" value="New Quote Request — The Allegheny Chronicle" />
-      <input type="hidden" name="from_name" value="The Allegheny Chronicle Website" />
-      <input type="hidden" name="redirect" value="/thank-you" />
-      <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
-      <label>Business Name<input type="text" name="business_name" required /></label>
-      <label>Email<input type="email" name="email" required /></label>
-      <label>Phone<input type="tel" name="phone" /></label>
-      <label>Message<textarea name="message" rows="4" placeholder="Describe the services you need&hellip;" required></textarea></label>
-      <button type="submit">Request Free Quote</button>
-    </form>
-    <p class="sidebar__note">We'll reply within one business day.</p>
-  </div>
 </aside>
 
 <header class="site-header" id="siteHeader">
@@ -74,13 +49,13 @@
   </div>
 </header>
 
-<main id="homeMain">
-  <!-- Rendered by js/home.js based on how many published articles exist. -->
-  <div class="empty-state" id="loadingState">
-    <div class="empty-state__inner">
-      <div class="skeleton" style="height:220px;width:220px;border-radius:50%;margin:0 auto 24px;"></div>
-      <div class="skeleton" style="height:28px;width:70%;margin:0 auto 14px;"></div>
-      <div class="skeleton" style="height:16px;width:50%;margin:0 auto;"></div>
+<main>
+  <div class="thankyou-hero">
+    <div class="thankyou-hero__inner">
+      <svg class="river-line" viewBox="0 0 84 14" aria-hidden="true"><path d="M0 7 C 20 2, 30 12, 42 7 S 64 2, 84 7"/></svg>
+      <h1>Thank You for Reaching Out.</h1>
+      <p>We've received your message and someone from our team will be in touch as soon as possible — usually within one business day.</p>
+      <a class="btn btn--gold" href="/">Back to Home</a>
     </div>
   </div>
 </main>
@@ -90,6 +65,5 @@
 </footer>
 
 <script src="/js/main.js"></script>
-<script src="/js/home.js"></script>
 </body>
 </html>

@@ -20,19 +20,22 @@
   <div class="sidebar__divider"></div>
   <p class="sidebar__eyebrow">Marketing Services</p>
   <ul class="sidebar__services">
-    <li>SEO Optimization</li>
-    <li>Website Development</li>
-    <li>Social Media Management</li>
-    <li>Multi-Platform Advertising</li>
-    <li>Blog &amp; Article Writing</li>
-    <li>Google Business Profile Optimization</li>
+    <li><a href="/services#seo-optimization">SEO Optimization</a></li>
+    <li><a href="/services#website-development">Website Development</a></li>
+    <li><a href="/services#social-media-management">Social Media Management</a></li>
+    <li><a href="/services#multi-platform-advertising">Multi-Platform Advertising</a></li>
+    <li><a href="/services#blog-article-writing">Blog &amp; Article Writing</a></li>
+    <li><a href="/services#google-business-profile-optimization">Google Business Profile Optimization</a></li>
   </ul>
   <div class="sidebar__divider"></div>
   <div class="sidebar__quote">
     <h3>Request a Free Quote</h3>
-    <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="quote" />
-      <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="6834e651-4651-4952-b973-614af0dc6437" />
+      <input type="hidden" name="subject" value="New Quote Request — The Allegheny Chronicle" />
+      <input type="hidden" name="from_name" value="The Allegheny Chronicle Website" />
+      <input type="hidden" name="redirect" value="/thank-you" />
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
       <label>Business Name<input type="text" name="business_name" required /></label>
       <label>Email<input type="email" name="email" required /></label>
       <label>Phone<input type="tel" name="phone" /></label>
