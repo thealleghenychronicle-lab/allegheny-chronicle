@@ -8,7 +8,7 @@ tags:
   - Pittsburgh
   - Allegheny County
   - community journalism
-image: /images/articles/allegheny-chronicle-logo.png
+image: /images/articles/placeholder-hero.jpg
 author: The Allegheny Chronicle Staff
 date: 2026-07-31T08:02:00.000-04:00
 excerpt: The Allegheny Chronicle launches today, a new digital publication
