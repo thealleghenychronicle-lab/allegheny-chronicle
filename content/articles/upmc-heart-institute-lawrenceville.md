@@ -19,7 +19,7 @@ excerpt: UPMC is expanding its Children's Hospital heart program in
 featured: false
 trending: false
 editorsPick: false
-draft: true
+draft: false
 ---
 
 ## A Major Expansion in Lawrenceville
