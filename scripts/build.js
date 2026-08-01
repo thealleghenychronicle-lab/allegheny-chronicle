@@ -250,7 +250,7 @@ function buildArticlePages(articles) {
 }
 
 function buildSitemap(articles) {
-  const staticUrls = ["/", "/search.html"];
+  const staticUrls = ["/", "/search.html", "/services"];
   const urls = [
     ...staticUrls.map((u) => `${SITE_URL}${u}`),
     ...articles.map((a) => `${SITE_URL}/articles/${a.slug}/`),

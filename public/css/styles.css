@@ -389,14 +389,39 @@ body.sidebar-open { overflow: hidden; }
 .related-empty--left .related-empty__eyebrow,
 .related-empty--left .river-line { margin-left: 0; }
 
-.services-nav { text-align: center; padding: 0 0 60px; }
-.services-nav .btn { display: inline-block; margin: 0 6px 12px; }
+.services-nav { padding: 0 0 60px; max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.services-nav .btn {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  justify-content: flex-start; text-align: left; padding: 16px 22px;
+}
+.services-nav .btn__icon { flex-shrink: 0; width: 20px; height: 20px; color: var(--gold-deep); transition: color .22s ease; }
+.services-nav .btn__icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 2; }
+.services-nav .btn__chevron { margin-left: auto; flex-shrink: 0; width: 16px; height: 16px; color: var(--gold-deep); transition: color .22s ease, transform .22s ease; }
+.services-nav .btn__chevron svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 2; }
+.services-nav .btn:hover .btn__icon,
+.services-nav .btn:hover .btn__chevron { color: var(--white); }
+.services-nav .btn:hover .btn__chevron { transform: translateX(3px); }
 
 .service-section .article-body { max-width: 700px; margin: 0 auto; }
 .service-section .related-empty { max-width: 700px; margin: 30px auto 0; }
 .service-section .related-empty ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
 .service-section .related-empty li { position: relative; padding-left: 20px; }
 .service-section .related-empty li::before { content: "•"; position: absolute; left: 0; color: var(--gold-deep); }
+
+.service-block__closing {
+  max-width: 700px; margin: 40px auto 0; padding: 40px clamp(24px, 5vw, 48px);
+  border: 1px solid var(--line); border-radius: 20px;
+  background: linear-gradient(180deg, var(--paper-dim), var(--paper));
+  text-align: center;
+}
+.service-block__closing-mark-row { display: flex; align-items: center; gap: 16px; margin: 0 0 20px; }
+.service-block__closing-mark-row .rule { flex: 1; height: 1px; background: var(--gold); opacity: 0.6; }
+.service-block__closing-mark { font-family: var(--font-display); font-size: 2.4rem; line-height: 1; color: var(--gold); }
+.service-block__closing p {
+  font-family: var(--font-display); font-style: italic; font-size: 1.3rem; line-height: 1.6;
+  color: var(--black); margin: 0 0 20px;
+}
+.service-block__closing .river-line { margin: 0 auto; opacity: 0.8; }
 
 .quote-panel {
   background: var(--black); color: var(--paper); border-radius: 22px;

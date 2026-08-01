@@ -101,6 +101,27 @@ The "Request a Free Quote" form in the sidebar uses Netlify Forms
 under **Forms** automatically — no backend needed. It only ever
 appears in the sidebar, per spec.
 
+## Web3Forms (all contact/quote forms)
+Every form on the site (sidebar quote form, Services page inquiry form)
+posts to Web3Forms instead of Netlify Forms. The access key is already
+set in this build. If you ever need to rotate it (e.g. it gets exposed
+publicly), generate a new one at **web3forms.com** and replace it in:
+   - `public/index.html`
+   - `public/search.html`
+   - `public/services.html` (two forms — sidebar + page-bottom inquiry)
+   - `scripts/templates/article-template.html` (feeds every generated
+     article page)
+Web3Forms redirects visitors to `/thank-you` automatically after a
+successful submit.
+
+## New pages
+- `/services` — one page covering all six marketing services, each
+  with its own anchor (`#seo-optimization`, `#website-development`,
+  etc.) so sidebar links jump straight to the right section.
+- `/thank-you` — shown after any form submission.
+- Both are also reachable at their literal `.html` filenames; the
+  clean URLs are handled by redirects in `netlify.toml`.
+
 ## Images
 Replace `public/images/placeholder-hero.jpg` usage by uploading a real
 featured image per article in the CMS (Decap CMS stores uploads in
