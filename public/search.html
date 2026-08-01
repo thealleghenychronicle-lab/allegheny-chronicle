@@ -110,15 +110,18 @@
   }
 
   var heroContainer = heading.closest(".search-hero");
+  var riverLine = '<svg class="river-line" viewBox="0 0 84 14" aria-hidden="true"><path d="M0 7 C 20 2, 30 12, 42 7 S 64 2, 84 7"/></svg>';
 
   if (!q) {
     if (heroContainer) heroContainer.style.display = "none";
     body.innerHTML =
-      '<div class="search-zero">' +
-        '<div class="search-zero__inner">' +
-          '<span class="search-zero__badge">Search</span>' +
-          '<h2>What are you looking for?</h2>' +
-          '<p class="sub">Search businesses, industries, or topics covered by The Allegheny Chronicle.</p>' +
+      '<div class="empty-state">' +
+        '<div class="empty-state__inner">' +
+          '<div class="empty-state__glow"></div>' +
+          riverLine +
+          '<span class="eyebrow">Search</span>' +
+          '<h1>What are you looking for?</h1>' +
+          '<p>Search businesses, industries, or topics covered by The Allegheny Chronicle.</p>' +
           '<a class="btn btn--gold" href="/">Back to Home</a>' +
         '</div>' +
       '</div>';
@@ -126,13 +129,6 @@
   }
 
   heading.innerHTML = 'Results for &ldquo;<span class="search-hero__query">' + q + '</span>&rdquo;';
-
-  var noResultsCta =
-    '<div class="no-results-cta">' +
-      '<svg class="river-line" viewBox="0 0 84 14" aria-hidden="true"><path d="M0 7 C 20 2, 30 12, 42 7 S 64 2, 84 7"/></svg>' +
-      '<p>Don&rsquo;t see the business, public figure, or entity you&rsquo;re looking for? ' +
-      'Contact our team at <a href="mailto:TheAlleghenyChronicle@gmail.com">TheAlleghenyChronicle@gmail.com</a> and we&rsquo;ll be happy to help.</p>' +
-    '</div>';
 
   fetch("/articles.json")
     .then(function (r) { return r.ok ? r.json() : []; })
@@ -142,14 +138,22 @@
       if (!results.length) {
         if (heroContainer) heroContainer.style.display = "none";
         body.innerHTML =
-          '<div class="search-zero">' +
-            '<div class="search-zero__inner">' +
-              '<span class="search-zero__badge">0 Results</span>' +
-              '<h2>No stories matched &ldquo;' + q + '&rdquo;</h2>' +
-              '<p class="sub">We couldn&rsquo;t find any articles for that search. Try a different spelling, a broader term, or browse from the homepage.</p>' +
+          '<div class="empty-state">' +
+            '<div class="empty-state__inner">' +
+              '<div class="empty-state__glow"></div>' +
+              riverLine +
+              '<span class="eyebrow">0 Results</span>' +
+              '<h1>Results for &ldquo;' + q + '&rdquo;</h1>' +
+              '<p>No articles matched your search.</p>' +
               '<a class="btn btn--gold" href="/">Back to Home</a>' +
-              noResultsCta +
             '</div>' +
+          '</div>' +
+          '<div class="related-empty">' +
+            riverLine +
+            '<p class="related-empty__eyebrow">Need Help Finding Something?</p>' +
+            '<h3 class="related-empty__title">Can&rsquo;t find the business, public figure, or entity you&rsquo;re looking for?</h3>' +
+            '<p class="related-empty__body">Contact our team at ' +
+            '<a href="mailto:TheAlleghenyChronicle@gmail.com">TheAlleghenyChronicle@gmail.com</a> and we&rsquo;ll be happy to help.</p>' +
           '</div>';
         return;
       }
