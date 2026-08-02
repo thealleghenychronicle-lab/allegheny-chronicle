@@ -414,9 +414,7 @@ body.sidebar-open { overflow: hidden; }
   background: linear-gradient(180deg, var(--paper-dim), var(--paper));
   text-align: center;
 }
-.service-block__closing-mark-row { display: flex; align-items: center; gap: 16px; margin: 0 0 20px; }
-.service-block__closing-mark-row .rule { flex: 1; height: 1px; background: var(--gold); opacity: 0.6; }
-.service-block__closing-mark { font-family: var(--font-display); font-size: 2.4rem; line-height: 1; color: var(--gold); }
+.service-block__closing-rule { height: 1px; background: var(--gold); opacity: 0.6; margin: 0 0 20px; }
 .service-block__closing p {
   font-family: var(--font-display); font-style: italic; font-size: 1.3rem; line-height: 1.6;
   color: var(--black); margin: 0 0 20px;
