@@ -93,25 +93,3 @@ That doesn't necessarily mean an agreement happens this summer.
 Pittsburgh has never operated on outside expectations or media timelines. Omar Khan has shown patience in negotiations, and the front office isn't known for making panic decisions simply because speculation starts building.
 
 If both sides believe they'll eventually get a deal done, there's little incentive to rush.
-
-## Reading Between the Lines
-
-The easiest explanation is often the correct one.
-
-If Porter experienced an unexpected setback during conditioning, placing him on the active PUP list is simply the responsible football decision. It protects the player while giving him time to recover before returning to practice.
-
-But because his contract status is already a talking point, every development gets viewed through a different lens.
-
-That's just how the NFL works.
-
-Until Porter is back on the practice field—or until extension talks become public—questions are going to continue.
-
-The Steelers may know exactly what's happening behind closed doors.
-
-Fans don't.
-
-And that's why a seemingly routine roster move became one of the biggest storylines of the opening week of training camp.
-
-For now, the organization continues to describe the issue as injury-related, and there's been no indication from the team that contract negotiations played any role in the decision.
-
-One thing is certain: the longer Joey Porter Jr. remains sidelined, the louder those questions are going to become.
