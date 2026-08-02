@@ -18,7 +18,7 @@ excerpt: UPMC is expanding its Children's Hospital heart program in
   costs elsewhere.
 featured: false
 trending: false
-editorsPick: false
+editorsPick: true
 draft: false
 ---
 
