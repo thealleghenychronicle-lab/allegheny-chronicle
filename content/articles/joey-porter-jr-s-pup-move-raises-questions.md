@@ -21,7 +21,7 @@ trending: true
 editorsPick: true
 draft: false
 ---
-# Joey Porter Jr.'s PUP Move Raises Questions
+## Joey Porter Jr.'s PUP Move Raises Questions
 
 The Pittsburgh Steelers opened training camp expecting to have two cornerbacks begin on the Physically Unable to Perform (PUP) list. General manager Omar Khan made that clear when he discussed veteran Jalen Ramsey and rookie Donte Kent dealing with injuries heading into Latrobe.
 
@@ -31,7 +31,7 @@ That unexpected development immediately shifted attention away from the field an
 
 While the team insists the move is injury-related, the timing naturally raises questions.
 
-# Why Joey Porter Jr.'s PUP Placement Matters
+## Why Joey Porter Jr.'s PUP Placement Matters
 
 When a young cornerstone player lands on the PUP list without much warning, speculation follows.
 
@@ -51,7 +51,7 @@ There's no evidence that's what's happening. In fact, reports indicate nothing o
 
 Still, when the Steelers announce Ramsey and Kent will start camp on PUP, only to add Porter later, it creates an unusual timeline that's difficult to ignore.
 
-# The Steelers Need Joey Porter Jr. Healthy
+## The Steelers Need Joey Porter Jr. Healthy
 
 This isn't just about money.
 
@@ -67,7 +67,7 @@ That said, every missed practice matters.
 
 Training camp is where communication develops, chemistry grows, and new defensive concepts become second nature. Missing those reps is never ideal, particularly with a secondary that has several new faces learning to play together.
 
-# Is a Contract Extension Still Coming?
+## Is a Contract Extension Still Coming?
 
 The Steelers have made it clear over the years that they'll pay players they believe are foundational pieces.
 
@@ -93,7 +93,7 @@ Pittsburgh has never operated on outside expectations or media timelines. Omar K
 
 If both sides believe they'll eventually get a deal done, there's little incentive to rush.
 
-# Reading Between the Lines
+## Reading Between the Lines
 
 The easiest explanation is often the correct one.
 
