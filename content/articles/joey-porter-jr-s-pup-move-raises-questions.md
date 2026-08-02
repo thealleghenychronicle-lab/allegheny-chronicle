@@ -17,7 +17,7 @@ excerpt: The Steelers expected Jalen Ramsey and Donte Kent to open training camp
   on the PUP list, but Joey Porter Jr.'s surprise addition has sparked
   questions. Here's why the timing is drawing attention and what it could mean
   for his contract situation.
-featured: false
+featured: true
 trending: true
 editorsPick: true
 draft: false
