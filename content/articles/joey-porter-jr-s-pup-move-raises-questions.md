@@ -1,5 +1,6 @@
 ---
 title: Joey Porter Jr.'s PUP Move Raises Questions
+businessName: Pittsburgh Steelers
 location: South Side, Pittsburgh, PA
 category: Sports
 tags:
