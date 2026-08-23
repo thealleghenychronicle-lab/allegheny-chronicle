@@ -9,7 +9,7 @@ author: The Allegheny Chronicle Staff
 date: 2026-08-22T00:43:00.000-04:00
 excerpt: After putting up 28 points against the Green Bay Packers in their
   preseason opener, the Steelers were completely shut down Friday night, falling
-  to the New York Jets 17-0!
+  to the New York Jets 17-0.
 featured: true
 trending: true
 editorsPick: true
