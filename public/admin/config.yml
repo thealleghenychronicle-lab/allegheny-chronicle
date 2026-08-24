@@ -29,7 +29,7 @@ auth:
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
 # Add site links in Decap CMS (optional)
-site_url: https://peaceful-kulfi-de7b70.netlify.app
+site_url: https://thealleghenychronicle.com
 
 media_folder: "public/images/articles"
 public_folder: "/images/articles"
