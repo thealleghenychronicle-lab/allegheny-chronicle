@@ -21,7 +21,7 @@ excerpt: Sea Monkey brings Mediterranean and Japanese influences, nightlife,
 featured: true
 trending: true
 editorsPick: true
-draft: false
+draft: true
 ---
 # Sea Monkey Is Trying to Be a Restaurant, Lounge and Night Out — Pittsburgh Is Still Deciding What to Make of It
 
