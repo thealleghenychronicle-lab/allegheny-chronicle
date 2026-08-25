@@ -1,6 +1,5 @@
 ---
-title: Pittsburgh-Born Playwright A.K. Payne Returns Home With World Premiere at
-  August Wilson House
+title: Pittsburgh-Born Playwright A.K. Payne Returns Home For World Premiere
 businessName: Pittsburgh Playwrights Theatre Company
 location: Pittsburgh, PA
 category: Arts & Culture
