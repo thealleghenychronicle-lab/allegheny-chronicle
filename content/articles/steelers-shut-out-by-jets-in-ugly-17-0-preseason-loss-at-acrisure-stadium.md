@@ -97,7 +97,7 @@ Pittsburgh will have one more preseason game against the **Buffalo Bills next Th
 
 For now, the scoreboard tells the story:
 
-**Jets 17, Steelers 0.**
+**Jets 17 Steelers 0**
 
 It wasn't the result Pittsburgh wanted in front of the home crowd, but the preseason is ultimately about discovering what needs to be fixed before the games start counting.
 
