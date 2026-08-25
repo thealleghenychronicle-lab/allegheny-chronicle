@@ -79,10 +79,12 @@ For Pittsburgh and Western Pennsylvania, meanwhile, the story has an unusually c
 
 York's Ohio arrest and subsequent no-contest plea have already resolved the criminal case, but the NFL's review could determine whether the matter has further consequences for the 49ers owner.
 
+
+
 ### Sources
 
-- [Reuters — 49ers owner Jed York pleads no contest after arrest in Ohio](https://www.reuters.com/sports/reports-49ers-owner-jed-york-arrested-ohio-over-weekend--flm-2026-08-24/)
-- [CBS News — San Francisco 49ers owner Jed York arrested in Ohio](https://www.cbsnews.com/sanfrancisco/news/san-francisco-49ers-owner-jed-york-arrested-east-palestine-ohio/)
-- [ABC News/ESPN — San Francisco 49ers owner Jed York arrested in Ohio](https://abc7.com/19727825/)
-- [WPXI Pittsburgh — 49ers owner Jed York arrested in Ohio](https://www.wpxi.com/news/trending/49ers-owner-jed-york-arrested-ohio/EIF4VNVHC5HX3F4YNTVD7TK3QQ/)
-- [San Francisco 49ers — Official Team Website](https://www.49ers.com/)
+* [Reuters — 49ers owner Jed York pleads no contest after arrest in Ohio](https://www.reuters.com/sports/reports-49ers-owner-jed-york-arrested-ohio-over-weekend--flm-2026-08-24/)
+* [CBS News — San Francisco 49ers owner Jed York arrested in Ohio](https://www.cbsnews.com/sanfrancisco/news/san-francisco-49ers-owner-jed-york-arrested-east-palestine-ohio/)
+* [ABC News/ESPN — San Francisco 49ers owner Jed York arrested in Ohio](https://abc7.com/19727825/)
+* [WPXI Pittsburgh — 49ers owner Jed York arrested in Ohio](https://www.wpxi.com/news/trending/49ers-owner-jed-york-arrested-ohio/EIF4VNVHC5HX3F4YNTVD7TK3QQ/)
+* [San Francisco 49ers — Official Team Website](https://www.49ers.com/)
