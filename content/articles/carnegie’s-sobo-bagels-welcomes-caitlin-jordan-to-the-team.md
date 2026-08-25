@@ -23,7 +23,7 @@ excerpt: Sobo Bagels in Carnegie has welcomed Caitlin Jordan to its team after a
 featured: true
 trending: true
 editorsPick: true
-draft: false
+draft: true
 ---
 # Carnegie’s Sobo Bagels Welcomes Caitlin Jordan to the Team After Successful Interview
 
