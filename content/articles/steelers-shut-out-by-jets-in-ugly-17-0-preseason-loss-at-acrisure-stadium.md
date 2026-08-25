@@ -13,7 +13,7 @@ excerpt: After putting up 28 points against the Green Bay Packers in their
 featured: true
 trending: true
 editorsPick: true
-draft: true
+draft: false
 ---
 After putting up 28 points against the Green Bay Packers in their preseason opener, the Steelers were completely shut down Friday night, falling to the New York Jets **17-0**.
 
