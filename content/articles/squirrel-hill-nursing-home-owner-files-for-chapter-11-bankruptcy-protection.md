@@ -19,7 +19,7 @@ excerpt: The owner of Squirrel Hill Wellness & Rehabilitation Center has filed
   for Chapter 11 bankruptcy protection while seeking to maintain operations and
   explore a potential sale of the Pittsburgh nursing facility.
 featured: true
-trending: true
+trending: false
 editorsPick: true
 draft: false
 ---
