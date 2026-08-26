@@ -1,6 +1,5 @@
 ---
-title: Steelers and Joey Porter Jr. Contract Standoff Puts Business Decision in
-  Spotlight
+title: Steelers and Joey Porter Jr. Contract Standoff In The Spotlight
 businessName: Pittsburgh Steelers
 location: Pittsburgh, Pennsylvania
 category: Sports
