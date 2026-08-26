@@ -18,7 +18,7 @@ excerpt: Proposed Pittsburgh bank Sagehaven Bancorp has secured a 10-year lease
   for a new Strip District headquarters as the startup continues the regulatory
   process ahead of a potential 2027 launch.
 featured: true
-trending: true
+trending: false
 editorsPick: true
 draft: false
 ---
