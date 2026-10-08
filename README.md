@@ -128,3 +128,37 @@ featured image per article in the CMS (Decap CMS stores uploads in
 `public/images/articles/`). The AC logo is at
 `public/images/logo.png` (white background) and
 `public/images/logo-transparent.png` (transparent, used in the header).
+
+## Cloudflare Worker + Secrets
+On Cloudflare the site is a Worker with static assets: `wrangler.toml`
+points `main` at `worker/index.js` and serves `./public` through the
+`ASSETS` binding. Only `/api/*` runs Worker code; every other request is
+served straight from `public/`. Run `npm run build` first (set it as the
+build command in Cloudflare) so `public/` contains the generated articles.
+
+### Cloudflare Secrets Setup
+API keys are never stored in this project, the ZIP, or GitHub. The Worker
+reads them server-side from Cloudflare's encrypted environment. Create
+these three secret names (names only are listed here):
+
+- `GEMINI_API_KEY`
+- `GROQ_API_KEY`
+- `OPENROUTER_API_KEY`
+- `NEWSROOM_API_TOKEN` — a long random password *you invent*. The newsroom
+  sends it as `Authorization: Bearer <token>` to call protected routes.
+  Without it, protected routes stay closed (the site itself is unaffected).
+
+You paste the actual values yourself in Cloudflare: **Workers & Pages →
+your Worker → Settings → Variables and Secrets → Add → type "Secret"**.
+(Or from a terminal: `npx wrangler secret put GEMINI_API_KEY`, which
+prompts for the value.) For local testing, put them in a `.dev.vars`
+file, which is git-ignored — never commit it.
+
+### API routes (server-side, in `worker/api.js`)
+- `GET /api/health` — public liveness check.
+- `GET /api/newsroom/status` — protected; shows which provider secrets are set (yes/no only).
+- `POST /api/newsroom/ai/:provider` — protected; `gemini`, `groq` or `openrouter`.
+  The route, auth and key checks are in place; the provider adapters from the
+  newsroom router plug into this handler (currently returns 501).
+
+Run `npm test` to check the Worker routes.
