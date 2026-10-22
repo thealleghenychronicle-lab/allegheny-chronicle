@@ -8,7 +8,8 @@
       "mode": "initialize",
       "created": true,
       "probe": {
-        "first": true
+        "first": true,
+        "retried": true
       }
     }
   ]
