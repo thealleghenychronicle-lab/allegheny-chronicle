@@ -6,7 +6,10 @@
       "runId": "39790104487",
       "at": "2026-10-22T13:48:24.844Z",
       "mode": "initialize",
-      "created": true
+      "created": true,
+      "probe": {
+        "first": true
+      }
     }
   ]
 }
