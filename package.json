@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "The Allegheny Chronicle — a digital publication covering local businesses across Allegheny County and the Pittsburgh region.",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "node scripts/build.js",
-    "test": "node --test worker/api.test.mjs"
+    "test": "node --test worker/api.test.mjs newsroom/tests/*.test.js",
+    "runtime:check": "node newsroom/runtime.js check",
+    "state:connect": "node newsroom/state-connect.js"
   }
 }

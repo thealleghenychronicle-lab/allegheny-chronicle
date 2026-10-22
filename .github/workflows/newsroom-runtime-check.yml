@@ -1,0 +1,27 @@
+# Phase 3 / Step 4 -- runtime check ONLY. Manual trigger; no schedule, no secrets, no state-branch access, no AI/research calls,
+# no CMS drafts. It proves the Node + git runtime and the existing test suite work on a GitHub-hosted runner.
+# The real newsroom runner workflow (schedule, `contents: write`, provider secrets, concurrency) is a later, separate step.
+name: Newsroom runtime check
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  runtime-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Runtime preflight (offline; prints variable names only)
+        run: node newsroom/runtime.js check
+      - name: Test suite (offline; mocked providers; local bare repo as the state remote)
+        run: npm test
+      - name: Offline dry run (mock AI and research; scratch output only)
+        run: node newsroom/dry-run.js --out "$RUNNER_TEMP/newsroom-dry-run" > /dev/null

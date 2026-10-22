@@ -1,0 +1,148 @@
+{
+  "dryRun": true,
+  "offline": true,
+  "network": false,
+  "credentials": false,
+  "finalState": "HUMAN_REVIEW",
+  "stoppedAt": "HUMAN_REVIEW",
+  "writer": "zaydan",
+  "writerOverride": null,
+  "category": "sports",
+  "trace": [
+    {
+      "stage": "news_scout",
+      "employee": "thurayya",
+      "outcome": "waiting",
+      "state": "WAITING_FOR_RESEARCH",
+      "waitKind": "research"
+    },
+    {
+      "stage": "news_scout",
+      "employee": "thurayya",
+      "outcome": "completed",
+      "state": "QUEUED"
+    },
+    {
+      "stage": "news_director",
+      "employee": "maysam",
+      "outcome": "completed",
+      "state": "QUEUED"
+    },
+    {
+      "stage": "research_editor",
+      "employee": "nawfal",
+      "outcome": "completed",
+      "state": "QUEUED"
+    },
+    {
+      "stage": "writer",
+      "employee": "zaydan",
+      "outcome": "waiting",
+      "state": "WAITING_FOR_AI",
+      "waitKind": "ai"
+    },
+    {
+      "stage": "writer",
+      "employee": "zaydan",
+      "outcome": "completed",
+      "state": "QUEUED"
+    },
+    {
+      "stage": "fact_checker",
+      "employee": "uzayr",
+      "outcome": "revision",
+      "state": "NEEDS_REVISION",
+      "revisionTarget": "writer"
+    },
+    {
+      "stage": "writer",
+      "employee": "zaydan",
+      "outcome": "completed",
+      "state": "QUEUED"
+    },
+    {
+      "stage": "fact_checker",
+      "employee": "uzayr",
+      "outcome": "completed",
+      "state": "QUEUED"
+    },
+    {
+      "stage": "standards_editor",
+      "employee": "jumana",
+      "outcome": "completed",
+      "state": "QUEUED"
+    },
+    {
+      "stage": "source_editor",
+      "employee": "salsabil",
+      "outcome": "completed",
+      "state": "READY_FOR_CMS"
+    },
+    {
+      "stage": "cms_editor",
+      "employee": "maysoon",
+      "outcome": "completed",
+      "state": "HUMAN_REVIEW"
+    }
+  ],
+  "history": [
+    "QUEUED -> IN_PROGRESS [news_scout/thurayya] (claimed from QUEUED)",
+    "IN_PROGRESS -> WAITING_FOR_RESEARCH [news_scout/thurayya] (waiting for research)",
+    "WAITING_FOR_RESEARCH -> IN_PROGRESS [news_scout/thurayya] (claimed from WAITING_FOR_RESEARCH)",
+    "IN_PROGRESS -> QUEUED [news_scout/thurayya] (news_scout -> news_director)",
+    "QUEUED -> IN_PROGRESS [news_director/maysam] (claimed from QUEUED)",
+    "IN_PROGRESS -> QUEUED [news_director/maysam] (news_director -> research_editor)",
+    "QUEUED -> IN_PROGRESS [research_editor/nawfal] (claimed from QUEUED)",
+    "IN_PROGRESS -> QUEUED [research_editor/nawfal] (research_editor -> writer)",
+    "QUEUED -> IN_PROGRESS [writer/zaydan] (claimed from QUEUED)",
+    "IN_PROGRESS -> WAITING_FOR_AI [writer/zaydan] (waiting for ai)",
+    "WAITING_FOR_AI -> IN_PROGRESS [writer/zaydan] (claimed from WAITING_FOR_AI)",
+    "IN_PROGRESS -> QUEUED [writer/zaydan] (writer -> fact_checker)",
+    "QUEUED -> IN_PROGRESS [fact_checker/uzayr] (claimed from QUEUED)",
+    "IN_PROGRESS -> NEEDS_REVISION [fact_checker/uzayr] (revision fact_checker -> writer)",
+    "NEEDS_REVISION -> IN_PROGRESS [writer/zaydan] (claimed from NEEDS_REVISION)",
+    "IN_PROGRESS -> QUEUED [writer/zaydan] (writer -> fact_checker)",
+    "QUEUED -> IN_PROGRESS [fact_checker/uzayr] (claimed from QUEUED)",
+    "IN_PROGRESS -> QUEUED [fact_checker/uzayr] (fact_checker -> standards_editor)",
+    "QUEUED -> IN_PROGRESS [standards_editor/jumana] (claimed from QUEUED)",
+    "IN_PROGRESS -> QUEUED [standards_editor/jumana] (standards_editor -> source_editor)",
+    "QUEUED -> IN_PROGRESS [source_editor/salsabil] (claimed from QUEUED)",
+    "IN_PROGRESS -> READY_FOR_CMS [source_editor/salsabil] (source_editor -> cms_editor)",
+    "READY_FOR_CMS -> IN_PROGRESS [cms_editor/maysoon] (claimed from READY_FOR_CMS)",
+    "IN_PROGRESS -> CMS_DRAFT [cms_editor/maysoon] (cms_editor complete)",
+    "CMS_DRAFT -> HUMAN_REVIEW [cms_editor/maysoon] (automation stops at HUMAN_REVIEW)"
+  ],
+  "cmsDraft": {
+    "filename": "steelers-stadium-sponsorship-deal-announced.md",
+    "draft": true,
+    "frontmatterFields": [
+      "title",
+      "slug",
+      "businessName",
+      "location",
+      "category",
+      "tags",
+      "image",
+      "imageAlt",
+      "author",
+      "date",
+      "excerpt",
+      "featured",
+      "trending",
+      "editorsPick",
+      "draft"
+    ]
+  },
+  "limiter": "1 of 3 slots used",
+  "aiCalls": [
+    "maysam:story_evaluation",
+    "nawfal:research_synthesis",
+    "zaydan:writing",
+    "zaydan:writing",
+    "zaydan:writing",
+    "uzayr:fact_check",
+    "jumana:standards_review",
+    "salsabil:source_analysis"
+  ],
+  "researchCalls": 3
+}

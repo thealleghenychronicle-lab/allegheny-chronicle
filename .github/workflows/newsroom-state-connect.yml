@@ -1,0 +1,98 @@
+# Phase 3 / Step 5 -- connect (or, on explicit request, create) the real `newsroom-state` branch and verify real read/write persistence.
+# MANUAL TRIGGER ONLY. No schedule, no push/PR trigger, no secrets other than the built-in GITHUB_TOKEN, no AI/research/CMS access.
+# Least privilege: the default for every job is NO permissions; the read-only job gets `contents: read`, the write job gets `contents: write`.
+# It never force-pushes, resets, deletes or rewrites a branch, and never copies website/article files (see newsroom/STATE_CONNECT.md).
+#
+# Modes (Actions tab -> "Newsroom state connect" -> Run workflow):
+#   read-only   (default) authenticate + check whether the branch exists + read it. Writes nothing. Fails if the branch is missing.
+#   verify      branch must exist. Writes ONLY connection-check.json (write, fresh-clone read-back, concurrent-writer probe).
+#   initialize  creates the orphan `newsroom-state` branch if (and only if) GitHub reports it absent, then runs `verify`.
+#               Requires typing INITIALIZE in the confirm box.
+name: Newsroom state connect
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "read-only (default, writes nothing) | verify (branch must exist) | initialize (creates the branch if missing)"
+        type: choice
+        options: [read-only, verify, initialize]
+        default: read-only
+      confirm:
+        description: "Only for mode=initialize: type INITIALIZE"
+        type: string
+        required: false
+        default: ""
+
+permissions: {}
+
+concurrency:
+  group: newsroom-state-connect
+  cancel-in-progress: false
+
+env:
+  NEWSROOM_EXPECTED_REPOSITORY: thealleghenychronicle-lab/allegheny-chronicle
+
+jobs:
+  read-only:
+    if: ${{ inputs.mode == 'read-only' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Guard - run only from the default branch
+        env:
+          REF_NAME: ${{ github.ref_name }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          if [ "$REF_NAME" != "$DEFAULT_BRANCH" ]; then echo "::error::Run this workflow from the default branch ($DEFAULT_BRANCH), not $REF_NAME."; exit 1; fi
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            newsroom
+            package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Offline preflight (variable names only)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node newsroom/runtime.js check --require state
+      - name: Connect (read-only)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node newsroom/state-connect.js read-only
+
+  write:
+    if: ${{ inputs.mode == 'verify' || inputs.mode == 'initialize' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Guard - run only from the default branch
+        env:
+          REF_NAME: ${{ github.ref_name }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          if [ "$REF_NAME" != "$DEFAULT_BRANCH" ]; then echo "::error::Run this workflow from the default branch ($DEFAULT_BRANCH), not $REF_NAME."; exit 1; fi
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            newsroom
+            package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Offline preflight (variable names only)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node newsroom/runtime.js check --require state
+      - name: Connect (${{ inputs.mode }})
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MODE: ${{ inputs.mode }}
+          NEWSROOM_CONFIRM_INITIALIZE: ${{ inputs.confirm }}
+        run: node newsroom/state-connect.js "$MODE"

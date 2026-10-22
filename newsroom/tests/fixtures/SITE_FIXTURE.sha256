@@ -1,0 +1,11 @@
+daef4982cd2c543a577a68e3ab58a4d8c8ef93a6048959ec22eca3a339838645  ./content/articles/duolingo-is-leaving-its-iconic-east-liberty-building-heres-where-its-headed.md
+de33af32056a63a9652f980d3415f11231123a435cad9c7ab080c04accf100d4  ./content/articles/joey-porter-jr-s-pup-move-raises-questions.md
+9e205c4190b515d8165f470c6abfab1d1f1d9dc075b3db24f3e2fcd4650f0ecc  ./content/articles/the-allegheny-chronicle-pittsburghs-new-business-journal.md
+ce50057cbbeb789bf97fb8e6b1477c0825b929af18f0b480fe336f8d9c552fb0  ./content/articles/upmc-heart-institute-lawrenceville.md
+b7b56a08f935301f867c1d368ddf9dfc492b2d16338d33775d3f07247c8aa86f  ./netlify.toml
+c5606340534b60ae01255007917f25d44c183d6c9c36956413acdca1aa0a11d0  ./package.json
+59090752da71ff1369b86ae8ed6d1134d28d26f8ed5de8d53eb86d7f34f68483  ./public/admin/config.yml
+aebca3467eb17c78c1152279fae92b75f0aac7f613264614001f21a25f03f69e  ./scripts/build.js
+40ce29b7562fe65cd8c6ce1b858c2bc6bf5307271be2b5ea301b8a24d02603b2  ./scripts/lib/frontmatter.js
+e3abe80e34869a65aeb2c1827382e76c460deff659de81e7a05ba4bd18622463  ./scripts/lib/markdown.js
+45b74d79d5bf7a4f0d804976cab53f08d8db16097e5f25745c40a3965cf53276  ./scripts/templates/article-template.html

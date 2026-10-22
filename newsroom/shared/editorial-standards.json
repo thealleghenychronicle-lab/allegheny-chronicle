@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "publisher": "The Allegheny Chronicle",
+  "standards": [
+    "Accurate — every factual claim must be verifiable against a real source.",
+    "Unbiased — no partisan framing, no personal opinion presented as fact.",
+    "Fair — all relevant parties get appropriate representation before a claim about them runs.",
+    "Evidence-based — no claim without a supporting source.",
+    "Neutral in tone — no sensational language, no manufactured drama.",
+    "Properly attributed — every claim traceable to where it came from.",
+    "No fabricated facts, quotes, sources, or URLs, ever, under any circumstance.",
+    "No unsupported speculation presented as fact — clearly label claims vs. confirmed fact.",
+    "No sensationalism used to drive engagement.",
+    "No manufactured controversy.",
+    "Businesses and individuals are never portrayed unfairly or out of context.",
+    "Content must be recent and genuinely relevant — never manufactured to fill a quota.",
+    "Sources are linked naturally at the point of use, never dumped in a trailing list."
+  ],
+  "hardRules": {
+    "noFabricatedQuotes": true,
+    "noFabricatedSources": true,
+    "noFabricatedUrls": true,
+    "noSpeculationAsFact": true,
+    "requiresSourceForFactualClaims": true
+  }
+}
