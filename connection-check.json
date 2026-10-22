@@ -18,7 +18,8 @@
       "mode": "verify",
       "created": false,
       "probe": {
-        "first": true
+        "first": true,
+        "retried": true
       }
     }
   ]
